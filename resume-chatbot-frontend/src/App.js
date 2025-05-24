@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ChatWindow from './components/ChatWindow';
+import ChatInput from './components/ChatInput';
+import { sendMessage } from './services/api';
+import './index.css';
 
 function App() {
+  const [messages, setMessages] = useState([]);
+
+  const handleSend = async (text) => {
+    setMessages(prev => [...prev, { from: 'user', text }]);
+    let reply;
+    try {
+      reply = await sendMessage(text);
+    } catch {
+      reply = "Σφάλμα σύνδεσης, δοκίμασε ξανά.";
+    }
+    setMessages(prev => [...prev, { from: 'bot', text: reply }]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+      <ChatWindow messages={messages} />
+      <ChatInput onSend={handleSend} />
     </div>
   );
 }
