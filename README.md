@@ -7,7 +7,6 @@ Welcome to Resume Chatbot, a web-based assistant that helps you explore my résu
 - Features
 - Installation
 - Usage
-- Project Structure
 - Tech Stack
 - Contributing
 - License
