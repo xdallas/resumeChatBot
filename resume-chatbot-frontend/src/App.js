@@ -14,14 +14,15 @@ function App() {
 
   // Sample questions for quick replies
   const sampleQuestions = [
+       "What is your name?",
+       "How old are you?",
+       "What is your education?",
+       "What are your hobbies?",
        "Tell me about your soft skills",
        "Tell me about your technical skills",
        "What is your experience?",
        "What languages do you speak?",
-       "What are your hobbies?",
-       "What is your age?",
-       "How can I contact you?",
-       "What is your name?"
+       "How can I contact you?"
      ];
 
   const handleSend = async (text) => {

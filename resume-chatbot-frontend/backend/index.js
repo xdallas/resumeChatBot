@@ -16,7 +16,7 @@ const responses = [
     reply: "You can reach me at xdallass1@gmail.com or on LinkedIn at https://www.linkedin.com/in/christos-dallas-286167227/ or on GitHub at https://github.com/xdallas or call me at +306985848000."
   },
   {
-    keys: ["email,", "mail"],
+    keys: ["email", "mail"],
     reply: "You can reach me at xdallass1@gmail.com."
   },
   {
@@ -24,11 +24,11 @@ const responses = [
     reply: "You can call me at +306985848000."
   },
   {
-    keys: ["LinkedIn", "linkedin"],
+    keys: ["LinkedIn"],
     reply: "You can reach me at https://www.linkedin.com/in/christos-dallas-286167227/."
   },
   {
-    keys: ["GitHub", "github"],
+    keys: ["GitHub"],
     reply: "You can reach me at https://github.com/xdallass."
   },
   {
