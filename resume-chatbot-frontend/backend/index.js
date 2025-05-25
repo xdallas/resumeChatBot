@@ -8,12 +8,32 @@ app.use(express.json());
 
 const responses = [
   {
-    keys: ["contact", "email", "phone", "linkedin", "github"],
-    reply: "You can reach me at xdallass1@gmail.com or on LinkedIn at https://www.linkedin.com/in/christos-dallas-286167227/."
+    keys: ["contact", "reach", "get in touch]"],
+    reply: "You can reach me at xdallass1@gmail.com or on LinkedIn at https://www.linkedin.com/in/christos-dallas-286167227/ or on GitHub at https://github.com/xdallas or call me at +306985848000."
+  },
+  {
+    keys: ["email,", "mail"],
+    reply: "You can reach me at xdallass1@gmail.com."
+  },
+  {
+    keys: ["phone", "call", "number"],
+    reply: "You can call me at +306985848000."
+  },
+  {
+    keys: ["LinkedIn", "linkedin"],
+    reply: "You can reach me at https://www.linkedin.com/in/christos-dallas-286167227/."
+  },
+  {
+    keys: ["GitHub", "github"],
+    reply: "You can reach me at https://github.com/xdallass."
   },
   {
     keys: ["about", "profile", "yourself", "who are you"],
     reply: "I am Christos Dallas, a 4th-year Computer Science student at the University of Crete."
+  },
+  {
+    keys: ["age", "old", "how old", "years old"],
+    reply: "I am 22 years old."
   },
   {
     keys: ["education", "study", "degree", "university"],
@@ -40,7 +60,7 @@ const responses = [
     reply: "I volunteered serving meals to the homeless and joined a beach cleanup for sea turtle conservation."
   },
   {
-    keys: ["soft skills", "teamwork", "leadership", "communication"],
+    keys: ["soft skills","interpersonal skills", "communication", "teamwork", "leadership", "problem-solving"],
     reply: "I have strong communication, teamwork, leadership, and problem-solving skills."
   }
 ];
@@ -51,7 +71,7 @@ app.post('/chat', (req, res) => {
   const entry = responses
     .sort((a,b) => b.keys[0].length - a.keys[0].length)
     .find(e => e.keys.some(k => lower.includes(k)));
-  const reply = entry ? entry.reply : "Sorry, I didn't understand that. Can you ask something else?";
+  const reply = entry ? entry.reply : "Sorry, I didn't understand that. Can you ask me something else?";
   res.json({ reply });
 });
   
