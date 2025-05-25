@@ -1,6 +1,6 @@
 # Resume Chatbot
 
-Welcome to Resume Chatbot, a web-based assistant that helps you explore my résumé with conversational ease. Ask a question or click a suggestion to get started!
+Welcome to Resume Chatbot, a web-based assistant that helps you explore my resumé with conversational ease. Ask a question or click a suggestion to get started!
 
 ## Table of Contents
 
