@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
+// Define the responses array with keywords and replies
 const responses = [
   {
     keys: ["Name", "name", "your name"],
@@ -71,15 +71,21 @@ const responses = [
 
 
 app.post('/chat', (req, res) => {
+  // Convert prompt to lowercase
   const lower = req.body.prompt.toLowerCase();
+   // Sort by keyword length (longest first)
   const entry = responses
     .sort((a,b) => b.keys[0].length - a.keys[0].length)
     .find(e => e.keys.some(k => lower.includes(k)));
+
+  // If we found a matching entry, use its reply; otherwise send a default message
   const reply = entry ? entry.reply : "Sorry, I didn't understand that. Can you ask me something else?";
+
+  // Send the reply back to the client
   res.json({ reply });
 });
   
-
+// Start the server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () =>
   console.log(`--> Backend running on http://localhost:${PORT}`)

@@ -6,11 +6,13 @@ import { sendMessage } from './services/api';
 import './index.css';
 
 function App() {
+  // State to manage messages, loading status, and error messages
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
 
+  // Sample questions for quick replies
   const sampleQuestions = [
        "Tell me about your soft skills",
        "Tell me about your technical skills",
@@ -31,6 +33,7 @@ function App() {
       //Texnito delay
       await new Promise(res => setTimeout(res, 300));
     } catch {
+      // Error handling when the server is closed
       reply = "Could not connect to the server.";
       setError("Could not connect to the server.");
       setTimeout(() => setError(''), 3000);
