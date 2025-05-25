@@ -40,6 +40,14 @@ function App() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+      <h1 style={{
+        textAlign: 'center',
+        margin: '16px 0',
+        fontSize: '24px',
+        fontWeight: 'bold'
+      }}>
+      Christos Dallas • Resume Chatbot
+    </h1>
       {error && (
         <div style={{
           background: '#f8d7da',

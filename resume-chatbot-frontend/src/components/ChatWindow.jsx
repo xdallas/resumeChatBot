@@ -22,7 +22,7 @@ export default function ChatWindow({ messages }) {
       flexDirection: 'column'
     }}>
       {messages.length === 0
-        ? <p style={{ color: '#666' }}>Δεν υπάρχουν μηνύματα ακόμα.</p>
+        ? <p style={{ color: '#666' }}>No messages yet.</p>
         : messages.map((msg, i) => (
           <div
           key={i}
