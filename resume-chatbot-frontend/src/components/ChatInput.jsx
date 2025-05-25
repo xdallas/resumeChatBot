@@ -22,7 +22,7 @@ export default function ChatInput({ onSend, loading }) {
         value={text}
         onChange={e => setText(e.target.value)}
         onKeyDown={e => { if (e.key === 'Enter') submit(); }}
-        placeholder={loading ? "Sending…" : "Γράψε μήνυμα…"}
+        placeholder={loading ? "Sending…" : "Write a message..."}
         disabled={loading}
         style={{
           flex: 1,

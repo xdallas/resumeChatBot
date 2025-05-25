@@ -27,8 +27,8 @@ function App() {
       //Texnito delay
       await new Promise(res => setTimeout(res, 300));
     } catch {
-      reply = "Σφάλμα σύνδεσης, δοκίμασε ξανά.";
-      setError("Δεν μπόρεσα να συνδεθώ με τον server.");
+      reply = "Could not connect to the server.";
+      setError("Could not connect to the server.");
       setTimeout(() => setError(''), 3000);
     }
     setMessages(prev => [...prev, { from: 'bot', text: reply }]);

@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 export default function ChatWindow({ messages }) {
   const containerRef = useRef(null);
   useEffect(() => {
-    // κάθε φορά που το messages αλλάζει, κατεβαίνουμε κάτω
+    // Scroll to the bottom whenever messages change
     if (containerRef.current) {
       const el = containerRef.current;
       el.scrollTop = el.scrollHeight;
