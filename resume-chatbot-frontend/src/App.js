@@ -18,8 +18,8 @@ function App() {
        "How old are you?",
        "What is your education?",
        "What are your hobbies?",
-       "Tell me about your soft skills",
-       "Tell me about your technical skills",
+       "Tell me about your soft skills?",
+       "Tell me about your technical skills?",
        "What is your experience?",
        "What languages do you speak?",
        "How can I contact you?"
