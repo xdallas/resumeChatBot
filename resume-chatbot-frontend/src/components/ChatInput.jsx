@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function ChatInput({ onSend }) {
+export default function ChatInput({ onSend, loading }) {
   const [text, setText] = useState('');
 
   const submit = () => {
@@ -22,28 +22,37 @@ export default function ChatInput({ onSend }) {
         value={text}
         onChange={e => setText(e.target.value)}
         onKeyDown={e => { if (e.key === 'Enter') submit(); }}
-        placeholder="Γράψε μήνυμα…"
+        placeholder={loading ? "Sending…" : "Γράψε μήνυμα…"}
+        disabled={loading}
         style={{
           flex: 1,
-          padding: 8,
+          padding: '10px 12px',
           border: '1px solid #ccc',
-          borderRadius: 4
+          borderRadius: 20,
+          outline: 'none',
+          background: loading ? '#f5f5f5' : '#ffffff',
+          fontSize: 14
         }}
-      />
+        />
+
       <button
         onClick={submit}
+        disabled={loading}
         style={{
           marginLeft: 8,
-          padding: '8px 16px',
-          background: '#007bff',
-          color: '#fff',
+          padding: '10px 20px',
+          background: loading ? '#999' : '#007bff',
+          color: '#ffffff',
           border: 'none',
-          borderRadius: 4,
-          cursor: 'pointer'
+          borderRadius: 20,
+          boxShadow: loading ? 'none' : '0 2px 5px rgba(0,0,0,0.1)',
+          cursor: loading ? 'default' : 'pointer',
+          fontSize: 14
         }}
       >
-        Send
+        {loading ? 'Sending…' : 'Send'}
       </button>
+
     </div>
   );
 }

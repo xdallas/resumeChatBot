@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export default function ChatWindow({ messages }) {
+  const containerRef = useRef(null);
+  useEffect(() => {
+    // κάθε φορά που το messages αλλάζει, κατεβαίνουμε κάτω
+    if (containerRef.current) {
+      const el = containerRef.current;
+      el.scrollTop = el.scrollHeight;
+    }
+  }, [messages]);
+  
   return (
-    <div style={{
+    <div 
+      ref={containerRef}
+      style={{
       flex: 1,
       overflowY: 'auto',
       padding: 16,
@@ -13,18 +24,23 @@ export default function ChatWindow({ messages }) {
       {messages.length === 0
         ? <p style={{ color: '#666' }}>Δεν υπάρχουν μηνύματα ακόμα.</p>
         : messages.map((msg, i) => (
-            <div
-              key={i}
-              style={{
-                alignSelf: msg.from === 'user' ? 'flex-end' : 'flex-start',
-                margin: '4px 0',
-                padding: 8,
-                borderRadius: 4,
-                background: msg.from === 'user' ? '#d0eaff' : '#eee',
-                maxWidth: '80%'
-              }}>
-              {msg.text}
-            </div>
+          <div
+          key={i}
+          style={{
+            alignSelf: msg.from === 'user' ? 'flex-end' : 'flex-start',
+            margin: '6px 0',
+            padding: '10px 14px',
+            borderRadius: 16,
+            background: msg.from === 'user' ? '#DCF8C6' : '#FFFFFF',
+            boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+            maxWidth: '75%',
+            lineHeight: 1.4,
+            wordBreak: 'break-word'
+          }}
+        >
+          {msg.text}
+        </div>
+        
           ))
       }
     </div>
