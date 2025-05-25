@@ -15,7 +15,7 @@ export default function ChatInput({ onSend, loading }) {
       display: 'flex',
       padding: 16,
       borderTop: '1px solid #ddd',
-      background: '#fff'
+      background: '#F1F1F2'
     }}>
       <input
         type="text"
@@ -30,7 +30,7 @@ export default function ChatInput({ onSend, loading }) {
           border: '1px solid #ccc',
           borderRadius: 20,
           outline: 'none',
-          background: loading ? '#f5f5f5' : '#ffffff',
+          background: loading ? '#f5f5f5' : '#F1F1F2',
           fontSize: 14
         }}
         />
@@ -41,8 +41,8 @@ export default function ChatInput({ onSend, loading }) {
         style={{
           marginLeft: 8,
           padding: '10px 20px',
-          background: loading ? '#999' : '#007bff',
-          color: '#ffffff',
+          background: loading ? '#999' : '#002C54',
+          color: '#FDF6F6',
           border: 'none',
           borderRadius: 20,
           boxShadow: loading ? 'none' : '0 2px 5px rgba(0,0,0,0.1)',

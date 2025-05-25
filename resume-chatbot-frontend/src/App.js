@@ -43,12 +43,13 @@ function App() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: '#F1F1F2' }}>
       <h1 style={{
         textAlign: 'center',
         margin: '16px 0',
         fontSize: '24px',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: '#002C54',
       }}>
       Christos Dallas • Resume Chatbot
     </h1>

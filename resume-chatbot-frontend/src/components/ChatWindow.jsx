@@ -17,7 +17,8 @@ export default function ChatWindow({ messages }) {
       flex: 1,
       overflowY: 'auto',
       padding: 16,
-      background: '#f9f9f9',
+      // Background color of the chat window
+      background: '#F1F1F2',
       display: 'flex',
       flexDirection: 'column'
     }}>
@@ -31,7 +32,8 @@ export default function ChatWindow({ messages }) {
             margin: '6px 0',
             padding: '10px 14px',
             borderRadius: 16,
-            background: msg.from === 'user' ? '#DCF8C6' : '#FFFFFF',
+            // Color of the message sent by the user
+            background: msg.from === 'user' ? '#BFDBFE' : '#FFFFFF',
             boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
             maxWidth: '75%',
             lineHeight: 1.4,

@@ -7,7 +7,7 @@ export default function QuickReplies({ questions, onSelect, disabled }) {
       flexWrap: 'wrap',
       gap: 8,
       padding: '8px 16px',
-      background: '#f1f1f1'
+      background: '#F1F1F2'
     }}>
       {questions.map((q, i) => (
         <button
@@ -18,7 +18,7 @@ export default function QuickReplies({ questions, onSelect, disabled }) {
             padding: '6px 12px',
             borderRadius: 12,
             border: '1px solid #ccc',
-            background: disabled ? '#eee' : '#fff',
+            background: disabled ? '#eee' : '#F1F1F2',
             cursor: disabled ? 'default' : 'pointer',
             fontSize: 13
           }}
