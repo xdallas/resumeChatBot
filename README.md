@@ -20,6 +20,21 @@ Welcome to Resume Chatbot, a web-based assistant that helps you explore my résu
 - Quick Replies: sample questions for instant responses.
 - Error Handling: displays a banner if something goes wrong.
 
+## Supported Queries
+
+- You can ask about the following topics (keywords in parentheses):
+- Contact (contact, email, phone, LinkedIn, GitHub)
+- About Me (about, profile, yourself, who are you)
+- Education (education, study, degree, university)
+- Experience (experience, work, employment, professional)
+- Technical Skills (skills, technical, programming)
+- Soft Skills (soft skills, teamwork, leadership, communication)
+- Languages (languages, when asked "Which languages", spoken, fluent)
+- Hobbies (hobbies, interests, free time, travel, culture, sports)
+- Volunteering (volunteer, community, volunteering, cleanup)
+- High School (high school, secondary, graduated)
+- Key Modules (modules, courses, subjects)
+
 ## Installation
 
 Follow these steps to set up the project locally:
@@ -51,22 +66,7 @@ node index.js
 cd ../resume-chatbot-frontend
 npm start
 
-Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
-
-## Project Structure
-
-resumeChatBot/
-├─ backend/ # Express API server
-│ └─ index.js # Main server entry point
-├─ resume-chatbot-frontend/ # React frontend application
-│ ├─ src/
-│ │ ├─ components/ # ChatWindow, ChatInput, QuickReplies
-│ │ ├─ services/ # API helper functions
-│ │ └─ App.js # Main React component
-│ ├─ public/ # Static assets
-│ └─ package.json # Frontend dependencies and scripts
-├─ README.md # Project README
-└─ .gitignore
+Open your browser and navigate to [http://localhost:3000].
 
 ## Tech Stack
 
@@ -79,11 +79,8 @@ resumeChatBot/
 Contributions are welcome. To add new keywords or responses:
 
 1. Open `backend/index.js`.
-2. Locate the `responses` configuration.
-3. Add or update entries:
-
-   responses["education"] = "I studied Computer Science at University of Crete.";
-
+2. ocate the responses array.
+3. Add or update entries with new keyword arrays and replies.
 4. Restart the backend server.
 
 Feel free to open issues or submit pull requests for improvements.
