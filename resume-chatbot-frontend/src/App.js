@@ -12,10 +12,14 @@ function App() {
 
 
   const sampleQuestions = [
-       "Tell me about your skills",
-       "What projects have you done?",
-       "Give me your education background",
-       "How can I contact you?"
+       "Tell me about your soft skills",
+       "Tell me about your technical skills",
+       "What is your experience?",
+       "What languages do you speak?",
+       "What are your hobbies?",
+       "What is your age?",
+       "How can I contact you?",
+       "What is your name?"
      ];
 
   const handleSend = async (text) => {

@@ -8,6 +8,10 @@ app.use(express.json());
 
 const responses = [
   {
+    keys: ["Name", "name", "your name"],
+    reply: "My name is Christos Dallas."
+  },
+  {
     keys: ["contact", "reach", "get in touch]"],
     reply: "You can reach me at xdallass1@gmail.com or on LinkedIn at https://www.linkedin.com/in/christos-dallas-286167227/ or on GitHub at https://github.com/xdallas or call me at +306985848000."
   },
@@ -28,7 +32,7 @@ const responses = [
     reply: "You can reach me at https://github.com/xdallass."
   },
   {
-    keys: ["about", "profile", "yourself", "who are you"],
+    keys: ["about", "profile", "yourself", "who are you", "introduce yourself"],
     reply: "I am Christos Dallas, a 4th-year Computer Science student at the University of Crete."
   },
   {
@@ -60,7 +64,7 @@ const responses = [
     reply: "I volunteered serving meals to the homeless and joined a beach cleanup for sea turtle conservation."
   },
   {
-    keys: ["soft skills","interpersonal skills", "communication", "teamwork", "leadership", "problem-solving"],
+    keys: ["soft skills","interpersonal skills", "communication", "communicate", "teamwork", "leadership", "problem-solving"],
     reply: "I have strong communication, teamwork, leadership, and problem-solving skills."
   }
 ];
