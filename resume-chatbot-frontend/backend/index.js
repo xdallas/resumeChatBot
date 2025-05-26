@@ -8,16 +8,28 @@ app.use(express.json());
 // Define the responses array with keywords and replies
 const responses = [
   {
-    keys: ["Name", "name", "your name","onoma", "pos se lene","pws se lene","pos onomazesai","pos onomazese", "pws onomazesai","pws onomazese"],
+    keys: ["Name", "name", "your name"],
     reply: "My name is Christos Dallas."
   },
   {
-    keys: ["age", "old", "how old", "years old","poso xronon eisai","ilikia","poso eisai"],
+    keys: ["onoma", "pos se lene","pws se lene","pos onomazesai","pos onomazese", "pws onomazesai","pws onomazese"],
+    reply: "Me lene Xristo Dalla."
+  },
+  {
+    keys: ["age", "old", "how old", "years old"],
     reply: "I am 22 years old."
   },
   {
-    keys: ["education", "study", "degree", "university", "college", "spoudes", "spoudazeis", "panepistimio"],
+    keys: ["poso xronon eisai", "poso xronwn eisai", "ilikia","poso eisai"],
+    reply: "Eimai 22 xronwn."
+  },
+  {
+    keys: ["education", "study", "degree", "university", "college"],
     reply: "I am studying Computer Science at the University of Crete, currently with a 70% grade."
+  },
+  {
+    keys: ["spoudes", "spoudazeis", "panepistimio"],
+    reply: "Spoudazw Computer Science sto University of Crete."
   },
   {
     keys: ["hobby", "hobbies", "interest", "interests", "free time", "outside", "xobi", "xobies", "eleftheros xronos"],
@@ -75,6 +87,14 @@ const responses = [
   {
     keys: ["volunteer", "volunteering", "community", "charity", "voluntary work", "volunteer work", "ethelontismos", "ethelontiki douleia"],
     reply: "I volunteered serving meals to the homeless and joined a beach cleanup for sea turtle conservation."
+  },
+  {
+    keys: ["High School", "lykeio", "liceo", "lyceum"],
+    reply: "I studied at 2nd Lyceum of Chania Crete."
+  },
+  {
+    keys: ["key modules", "key subjects", "key courses", "key modules", "modules", "courses", "subjects"],
+    reply: "Key modules include Data Structures, Software Technology Laboratory, Operating Systems, Computer Networks, Introduction to Secure Systems, Introduction to Cryptography, Object-Oriented Programming, Files and Databases and Data Science."
   }
 ];
 

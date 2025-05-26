@@ -1,6 +1,6 @@
 # Resume Chatbot
 
-Welcome to Resume Chatbot, a web-based assistant that helps you explore my resumé with conversational ease. Ask a question or click a suggestion to get started!
+Welcome to Resume Chatbot, a web-based assistant that helps you explore my resume through a conversation. Ask a question or click a suggestion to get started!
 
 ## Table of Contents
 
@@ -21,18 +21,17 @@ Welcome to Resume Chatbot, a web-based assistant that helps you explore my resum
 
 ## Supported Queries
 
-- You can ask about the following topics (keywords in parentheses):
-- Contact (contact, email, phone, LinkedIn, GitHub)
-- About Me (about, profile, yourself, who are you)
-- Education (education, study, degree, university)
-- Experience (experience, work, employment, professional)
-- Technical Skills (skills, technical, programming)
-- Soft Skills (soft skills, teamwork, leadership, communication)
-- Languages (languages, when asked "Which languages", spoken, fluent)
-- Hobbies (hobbies, interests, free time, travel, culture, sports)
-- Volunteering (volunteer, community, volunteering, cleanup)
-- High School (high school, secondary, graduated)
-- Key Modules (modules, courses, subjects)
+- **Contact** (contact, email, phone, LinkedIn, GitHub, reach, get in touch)
+- **About Me** (profile, yourself, who are you, introduce yourself, who is Christos Dallas, who is xdallass)
+- **Education** (education, study, degree, university, college, spoudes, spoudazeis, panepistimio)
+- **Experience** (experience, work, employment, professional)
+- **Technical Skills** (skills, technical, computer skills, programming, coding, software, hardware, programming languages, programming skills, texnites dexiotites)
+- **Soft Skills** (soft skills, interpersonal skills, communication, communicate, teamwork, leadership, problem-solving, koinonikes dexiotites)
+- **Languages** (languages, language, spoken, speak, fluent, speak languages, foreign languages, glosses, glossa)
+- **Hobbies** (hobby, hobbies, interest, interests, free time, outside, xobi, xobies, eleftheros xronos, travel, culture, sports)
+- **Volunteering** (volunteer, volunteering, community, charity, voluntary work, volunteer work, ethelontismos, ethelontiki douleia)
+- **High School** (high school, lykeio, liceo, lyceum)
+- **Key Modules** (key modules, key subjects, key courses, modules, courses, subjects)
 
 ## Installation
 
