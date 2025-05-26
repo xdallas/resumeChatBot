@@ -26,10 +26,12 @@ function App() {
      ];
 
   const handleSend = async (text) => {
+    // Add user message to chat window
     setMessages(prev => [...prev, { from: 'user', text }]);
     setLoading(true);
     let reply;
     try {
+      // Call the API to get the bot's reply
       reply = await sendMessage(text);
       //Texnito delay
       await new Promise(res => setTimeout(res, 300));
@@ -39,6 +41,7 @@ function App() {
       setError("Could not connect to the server.");
       setTimeout(() => setError(''), 3000);
     }
+    // Add bot's reply to chat window
     setMessages(prev => [...prev, { from: 'bot', text: reply }]);
     setLoading(false);
     if (error) {

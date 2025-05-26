@@ -16,19 +16,20 @@ export default function ChatWindow({ messages }) {
       ref={containerRef}
       style={{
         flex: 1,
-        overflowY: 'auto',
+        overflowY: 'auto', // if there are many messages, allow scrolling
         padding: 16,
         background: '#F1F1F2',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column' // continue messages vertically
       }}
     >
-      {messages.length === 0 ? (
+      {messages.length === 0 ? ( // Check if there are no messages
+        // Display a placeholder message when there are no messages
         <div style={{
-          flex: 1,                   // fill available space
+          flex: 1,                   
           display: 'flex',
-          justifyContent: 'center', // center horizontally
-          alignItems: 'center'      // center vertically
+          justifyContent: 'center', 
+          alignItems: 'center'      
         }}>
           <p style={{
             color: '#002C54',

@@ -99,6 +99,7 @@ const responses = [
 ];
 
 
+// Normalize incoming prompt: lowercase, strip punctuation, collapse spaces
 app.post('/chat', (req, res) => {
   const lowerPrompt = (req.body.prompt || '')
     .toLowerCase()
@@ -109,15 +110,17 @@ app.post('/chat', (req, res) => {
   const entry = responses
     .slice() // create a shallow copy to avoid mutating the original array
     .sort((a, b) => {
-      // Sort by the length of the longest key in descending order
+      // Calculate the maximum key length for each entry
       const maxA = Math.max(...a.keys.map(k => k.length));
       const maxB = Math.max(...b.keys.map(k => k.length));
       return maxB - maxA; // first sort by longest key
     })
     .find(e =>
+      // check if any key matches the prompt
       e.keys.some(key => new RegExp(`\\b${key.toLowerCase()}\\b`).test(lowerPrompt))
     );
-
+  
+  // If no entry matches, provide a default reply
   const reply = entry
     ? entry.reply
     : "Sorry, I didn't understand that. Can you ask something else?";
