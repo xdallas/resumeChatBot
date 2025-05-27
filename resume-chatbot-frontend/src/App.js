@@ -3,7 +3,6 @@ import ChatWindow from './components/ChatWindow';
 import ChatInput from './components/ChatInput';
 import QuickReplies from './components/QuickReplies';
 import { sendMessage } from './services/api';
-import './index.css';
 
 function App() {
   // State to manage messages, loading status, and error messages
@@ -31,25 +30,28 @@ function App() {
     setLoading(true);
     let reply;
     try {
-      // Call the API to get the bot's reply
+      // Call the API to get the bot's reply (Post sto backend until it responds). It does fetch and waits for the JSON reply
       reply = await sendMessage(text);
       //Texnito delay
       await new Promise(res => setTimeout(res, 300));
     } catch {
       // Error handling when the server is closed
-      reply = "Could not connect to the server.";
-      setError("Could not connect to the server.");
+      reply = "Could not connect to the server."; // Bot's reply in case of error
+      setError("Could not connect to the server."); // Error Banner
       setTimeout(() => setError(''), 3000);
     }
     // Add bot's reply to chat window
     setMessages(prev => [...prev, { from: 'bot', text: reply }]);
+    // Reset loading state
     setLoading(false);
+    // Extra check to clear error after 3 seconds
     if (error) {
       setTimeout(() => setError(''), 3000);
     }
   };
 
   return (
+    // Tittle
     <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: '#F1F1F2' }}>
       <h1 style={{
         textAlign: 'center',
@@ -59,8 +61,8 @@ function App() {
         color: '#002C54',
       }}>
       Christos Dallas • Resume Chatbot
-    </h1>
-      {error && (
+    </h1> 
+      {error && ( // ERROR BANNER
         <div style={{
           background: '#f8d7da',
           color: '#721c24',
@@ -74,13 +76,14 @@ function App() {
           {error}
         </div>
       )}
-      <ChatWindow messages={messages} />
-      <QuickReplies
+      <ChatWindow //Chat history
+      messages={messages} /> 
+      <QuickReplies // Quick reply buttons
        questions={sampleQuestions}
        onSelect={handleSend}
        disabled={loading}
      />
-      <ChatInput
+      <ChatInput // Chat input and send button
         onSend={handleSend}
         loading={loading}
     />

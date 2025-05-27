@@ -49,8 +49,8 @@ export default function ChatInput({ onSend, loading }) {
         style={{
           marginLeft: 8,
           padding: '10px 20px',
-          background: loading ? '#999' : '#BFDBFE',
-          color: '#000',
+          background: loading ? '#999' : '#002C54',
+          color: '#ffffff',
           border: 'none',
           borderRadius: 20,
           boxShadow: loading ? 'none' : '0 2px 5px rgba(0,0,0,0.1)',

@@ -1,12 +1,26 @@
-const express = require('express');
+// Make a quick HTTP server that listens for POST requests on /chat
+const express = require('express'); 
+
+// Backend-Frontend different IPs, so we need to enable CORS not to blocked by the browser
 const cors = require('cors');
 
+
+// Create an Express app
 const app = express();
+// Every request will be from the frontend, so we need to enable CORS
 app.use(cors());
 app.use(express.json());
 
 // Define the responses array with keywords and replies
 const responses = [
+  {
+    keys: ["Hello", "Hi", "Hey", "Hallo", "Greetings", "Good day", "Good morning", "Good afternoon", "Good evening"],
+    reply: "Hi there! How can I assist you today?"
+  },
+  {
+    keys: ["Can you help me?", "Help", "Need assistance", "Can you assist me?", "resume help", "resume assistance", "resume questions", "resume related questions"],
+    reply: "Yes, I can help you with your resume-related questions. What would you like to know?"
+  },
   {
     keys: ["Name", "name", "your name"],
     reply: "My name is Christos Dallas."
@@ -107,6 +121,8 @@ app.post('/chat', (req, res) => {
     .replace(/\s+/g, ' ')
     .trim();
 
+
+  // Sort the responses by longest key first, then find the first matching entry
   const entry = responses
     .slice() // create a shallow copy to avoid mutating the original array
     .sort((a, b) => {
@@ -117,20 +133,15 @@ app.post('/chat', (req, res) => {
     })
     .find(e =>
       // check if any key matches the prompt
-      e.keys.some(key => new RegExp(`\\b${key.toLowerCase()}\\b`).test(lowerPrompt))
+      e.keys.some(key => new RegExp(`\\b${key.toLowerCase()}\\b`).test(lowerPrompt)) 
     );
   
   // If no entry matches, provide a default reply
-  const reply = entry
-    ? entry.reply
-    : "Sorry, I didn't understand that. Can you ask something else?";
-
+  const reply = entry ? entry.reply : "Sorry, I didn't understand that. Can you ask something else?";
   res.json({ reply });
 });
 
 
-
-  
 // Start the server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () =>
