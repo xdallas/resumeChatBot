@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 export default function ChatInput({ onSend, loading }) {
   const [text, setText] = useState('');
+  // Create a ref object for the auto focus input
   const inputRef = useRef(null);
 
   // Focus the input when loading is false
@@ -9,13 +10,13 @@ export default function ChatInput({ onSend, loading }) {
     if (inputRef.current && !loading) {
       inputRef.current.focus();
     }
-  }, [loading]);
+  }, [loading]); // Runs the first time and when loading changes
 
   const submit = () => {
-    const msg = text.trim();
+    const msg = text.trim(); // Remove spaces from the start and end
     if (!msg || loading) return;
-    onSend(msg);
-    setText('');
+    onSend(msg); 
+    setText(''); // Clear the input after sending to be ready for the next message
   };
 
   return (

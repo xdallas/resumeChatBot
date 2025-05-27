@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function QuickReplies({ questions, onSelect, disabled }) {
+export default function QuickReplies({ questions, onSelect, disabled }) { //sampleQuestions, handleSend, loading
   return (
     <div style={{
       display: 'flex',
@@ -9,11 +9,11 @@ export default function QuickReplies({ questions, onSelect, disabled }) {
       padding: '8px 16px',
       background: '#F1F1F2'
     }}>
-      {questions.map((q, i) => (
+      {questions.map((q, i) => (  // Every question transformed to a button
         <button
           key={i}
           onClick={() => onSelect(q)}
-          disabled={disabled}
+          disabled={disabled} // If it is true, we are on loading
           style={{
             padding: '6px 12px',
             borderRadius: 12,

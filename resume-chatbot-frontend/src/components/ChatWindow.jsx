@@ -9,7 +9,7 @@ export default function ChatWindow({ messages }) {
       const el = containerRef.current;
       el.scrollTop = el.scrollHeight;
     }
-  }, [messages]);
+  }, [messages]); // Only run this effect when messages change
 
   return (
     <div

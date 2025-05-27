@@ -42,7 +42,7 @@ function App() {
     }
     // Add bot's reply to chat window
     setMessages(prev => [...prev, { from: 'bot', text: reply }]);
-    // Reset loading state
+    // Reset loading state, &enable auto-focus in ChatInput
     setLoading(false);
     // Extra check to clear error after 3 seconds
     if (error) {
