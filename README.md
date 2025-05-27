@@ -74,14 +74,12 @@ Open your browser and navigate to [http://localhost:3000].
 
 ## Contributing
 
-Contributions are welcome. To add new keywords or responses:
+To add new keywords or responses:
 
 1. Open `backend/index.js`.
 2. ocate the responses array.
 3. Add or update entries with new keyword arrays and replies.
 4. Restart the backend server.
-
-Feel free to open issues or submit pull requests for improvements.
 
 ## License
 
